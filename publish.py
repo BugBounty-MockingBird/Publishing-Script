@@ -8,10 +8,10 @@ import argparse
 import os
 import sys
 from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 import yaml
 import re
 from datetime import datetime
-from typing import Dict, List, Optional
 
 
 class ObsidianPublisher:
@@ -33,7 +33,7 @@ class ObsidianPublisher:
         
         self.output_path.mkdir(parents=True, exist_ok=True)
     
-    def extract_frontmatter(self, content: str) -> tuple[Optional[Dict], str]:
+    def extract_frontmatter(self, content: str) -> Tuple[Optional[Dict], str]:
         """
         Extract YAML frontmatter from markdown content.
         
